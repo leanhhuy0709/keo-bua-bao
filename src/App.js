@@ -17,7 +17,7 @@ export default function App() {
 		.then((res)=>{
 			setUsers(res.data);
 		})
-		.catch((err)=>console.log(err.response));
+		.catch((err)=>console.log(err));
 	}, []);
     if (localStorage.getItem("ip_server")==undefined)
     return (
