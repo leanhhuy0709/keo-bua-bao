@@ -8,17 +8,27 @@ import Room from "./page/Room/Room";
 import React, {useState, useEffect} from 'react';
 import "./App.css";
 import { Get } from "./axios/Axios";
-import e from "cors";
+import ReadIPServer from "./page/ReadIPServer/ReadIPServer";
 
 export default function App() {
     const [users, setUsers] = useState([]);
     useEffect(()=> {
-		Get("http://localhost:8080/users")
+		Get(`http://${localStorage.getItem("ip_server")}:8080/users`)
 		.then((res)=>{
 			setUsers(res.data);
 		})
 		.catch((err)=>console.log(err.response));
 	}, []);
+    if (localStorage.getItem("ip_server")==undefined)
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path = "/" element = {<ReadIPServer/>}/>
+                <Route path = "/*" element = {<ErrorPage/>}/>
+            </Routes>
+        </BrowserRouter>
+    );
+
     if (localStorage.getItem("username")!=undefined)
         return (
             <BrowserRouter>
@@ -40,6 +50,7 @@ export default function App() {
                     <Route path = "/" element = {<Login/>}/>
                     <Route path = "/login" element = {<Login/>}/>
                     <Route path = "/register" element = {<Register/>}/>
+                    <Route path = "/ipserver" element = {<ReadIPServer/>}/>
                     <Route path = "/*" element = {<ErrorPage/>}/>
                 </Routes>
             </BrowserRouter>

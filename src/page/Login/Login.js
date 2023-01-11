@@ -31,7 +31,7 @@ export default function Login() {
       return;
     }
     //
-    Post("http://localhost:8080/login", {username, password})
+    Post(`http://${localStorage.getItem("ip_server")}:8080/login`, {username, password})
     .then((res)=>{
       var value = res.data.msg;
       if (value == "True")
@@ -68,8 +68,8 @@ export default function Login() {
 
               <div className="my-1">
                 <p className="mb-0">Don"t have an account? <a href="/register" className="text-white-50 fw-bold">Sign Up</a></p>
-
               </div>
+              <Button className="px-5 py-2 my-1 color-btn" onClick={()=>{localStorage.clear();window.location.pathname="/"}}>Change IP Server</Button>
             </MDBCardBody>
           </MDBCard>
 

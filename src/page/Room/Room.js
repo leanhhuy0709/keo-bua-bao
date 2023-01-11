@@ -132,7 +132,7 @@ function Navibar() {
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link className='text-dark'>Hello {localStorage.getItem("username")}</Nav.Link>
-                  <Nav.Link href="/login" onClick={()=>{localStorage.clear()}}>Logout</Nav.Link>
+                  <Nav.Link href="/" onClick={()=>{localStorage.clear()}}>Logout</Nav.Link>
                 </Nav>
                 
               </Offcanvas.Body>

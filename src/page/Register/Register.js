@@ -37,7 +37,7 @@ export default function Register() {
         return;
       }
       //
-      Post("http://localhost:8080/register", {username, password})
+      Post(`http://${localStorage.getItem("ip_server")}:8080/register`, {username, password})
       .then((res)=>{
         var value = res.data.msg;
         if (value == "True")

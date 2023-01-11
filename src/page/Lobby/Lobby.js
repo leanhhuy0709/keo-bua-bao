@@ -44,7 +44,7 @@ export default function Lobby({users}) {
 		}
 		var name = document.getElementById("lobby_room_name").value;
 		var user1 = localStorage.getItem("username")
-		Post("http://localhost:8080/createroom", {name, time, user1})
+		Post(`http://${localStorage.getItem("ip_server")}:8080/createroom`, {name, time, user1})
 		.then((res)=>
 		{
 			if (res.data.msg == "True")
@@ -80,8 +80,6 @@ export default function Lobby({users}) {
                         <MDBInput style = {{width: "100%"}} wrapperClass="mb-4 mx-3" labelClass="text-white" placeholder="Tên phòng" id="lobby_room_name" type="text" size="lg"/>
                         <label className='mx-3 mb-1' style={{fontSize: "20px"}}>Thời gian chờ</label>
                         <Select onChange = {(choice)=>setTime(choice.value)} style = {{width: "100%"}} className="mb-4 ms-3" placeholder="Thời gian chờ" options={[
-                        { value: 10, label: '10 giây' },
-                        { value: 30, label: '30 giây' },
                         { value: 1000, label: 'Không giới hạn' }
                         ]} 
                         />
@@ -223,7 +221,7 @@ function Navibar() {
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link className='text-dark'>Hello {localStorage.getItem("username")}</Nav.Link>
-                  <Nav.Link href="/login" onClick={()=>{localStorage.clear()}}>Logout</Nav.Link>
+                  <Nav.Link href="/" onClick={()=>{localStorage.clear()}}>Logout</Nav.Link>
                 </Nav>
                 
               </Offcanvas.Body>
