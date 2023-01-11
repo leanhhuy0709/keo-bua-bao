@@ -13,11 +13,11 @@ import ReadIPServer from "./page/ReadIPServer/ReadIPServer";
 export default function App() {
     const [users, setUsers] = useState([]);
     useEffect(()=> {
-		Get(`https://${localStorage.getItem("ip_server")}:8080/users`)
+		Get(`http://${localStorage.getItem("ip_server")}:8080/users`)
 		.then((res)=>{
 			setUsers(res.data);
 		})
-		.catch((err)=>console.log(err));
+		.catch((err)=>console.log(err.response));
 	}, []);
     if (localStorage.getItem("ip_server")==undefined)
     return (

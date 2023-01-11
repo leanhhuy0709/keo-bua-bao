@@ -9,6 +9,7 @@
     "axios": "^1.2.2",
     "cors": "^2.8.5",
     "http-proxy-middleware": "^2.0.6",
+    "https": "^1.0.0",
     "mdb-react-ui-kit": "^5.0.0",
     "mdbreact": "^5.2.0",
     "react": "^18.2.0",
