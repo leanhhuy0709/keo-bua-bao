@@ -1,0 +1,89 @@
+body {
+    /* fallback for old browsers */
+    background: #6a11cb;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+  }
+
+.color-btn {
+    background: #6a11cb;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+    border: none;
+}
+
+.color-btn:hover {
+    background: white!important;
+    color: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/**/
+.circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background: #ddd;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    display: inline-block;vertical-align: text-bottom;
+}
+
+.circle-play-button {
+    width: 80px;
+    height: 80px;
+    background: #ddd;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    display: inline-block;vertical-align: text-bottom;
+    border: black 2px solid;
+}
+
+.circle-play-button:hover {
+    background-color: #6a11cb!important;
+}
+
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+.user-block {
+    margin-top: 10px;
+}
+
+.user-block:hover{
+    background: rgba(183, 183, 183, 0.661);
+}
+
+.text-title {
+    color: #6a11cb!important;
+}
+
+.text-title:hover {
+    color: rgba(37, 117, 252, 1)!important;
+}
+
+.my-icon:hover {
+    color: #6a11cb;
+}
