@@ -1,9 +1,8 @@
 import io from "socket.io-client";
 
 let socket;
-const SOCKET_URL = "http://localhost:8080";//connect~
 
-export const initiateSocket = (username) => {
+export const initiateSocket = (SOCKET_URL, username) => {
     socket = io(SOCKET_URL, {
     query: { username},
     });
