@@ -44,7 +44,7 @@ export default function Lobby({users}) {
 		}
 		var name = document.getElementById("lobby_room_name").value;
 		var user1 = localStorage.getItem("username")
-		Post(`http://${localStorage.getItem("ip_server")}:8080/createroom`, {name, time, user1})
+		Post(`http://${localStorage.getItem("ip_server")}:5000/createroom`, {name, time, user1})
 		.then((res)=>
 		{
 			if (res.data.msg == "True")
