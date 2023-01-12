@@ -31,7 +31,7 @@ export default function Login() {
       return;
     }
     //
-    Post(`http://${localStorage.getItem("ip_server")}:8080/login`, {username, password})
+    Post(`http://${localStorage.getItem("ip_server")}:5000/login`, {username, password})
     .then((res)=>{
       var value = res.data.msg;
       if (value == "True")
