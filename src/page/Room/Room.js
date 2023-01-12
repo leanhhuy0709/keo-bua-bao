@@ -20,7 +20,7 @@ export default function Room({users}) {
     const [RPS, setRPS] = useState([0, 0, 0]);
     const [opp, setOpp] = useState("");
     useEffect(()=>{
-		initiateSocket(localStorage.getItem("username"));
+		initiateSocket(`http://${localStorage.getItem("ip_server")}:5000`, localStorage.getItem("username"));
 		setOpp(localStorage.getItem("username2")!=undefined?localStorage.getItem("username2"):"Không có");
 		getMsg("accept", (res)=>{
 			console.log(res);
