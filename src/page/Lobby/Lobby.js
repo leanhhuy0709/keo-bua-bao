@@ -23,7 +23,7 @@ export default function Lobby({users}) {
 	const [modalShow, setModalShow] = useState(false);
 	const [resp, setResp] = useState(null);
   	useEffect(()=>{
-		initiateSocket(localStorage.getItem("username"), null);
+		initiateSocket(`http://${localStorage.getItem("ip_server")}:5000`, localStorage.getItem("username"));
 		getMsg("invite", (res)=>{
       console.log("lobby");
 			console.log(res);
